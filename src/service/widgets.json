@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "category": "CSPM Excecutive Dashboard",
+    "title": "Cloud Accounts",
+    "content": "",
+    "isVisible": true,
+    "isGraphAvailable": true
+  },
+  {
+    "id": 2,
+    "category": "CSPM Excecutive Dashboard",
+    "title": "Cloud Account Risk Assessment",
+    "content": "",
+    "isVisible": true,
+    "isGraphAvailable": true
+  },
+  {
+    "id": 3,
+    "category": "CWPP Dashboard",
+    "title": "Top 5 Namespace Specific Alerts",
+    "content": "",
+    "isVisible": true,
+    "isGraphAvailable": false
+  },
+  {
+    "id": 4,
+    "category": "CWPP Dashboard",
+    "title": "Workload Alerts",
+    "content": "",
+    "isVisible": true,
+    "isGraphAvailable": false
+  },
+  {
+    "id": 5,
+    "category": "Registry Scan",
+    "title": "Image Risk Assessment",
+    "content": "",
+    "isVisible": true,
+    "isGraphAvailable": true
+  },
+  {
+    "id": 6,
+    "category": "Registry Scan",
+    "title": "Image Security Issues",
+    "content": "",
+    "isVisible": true,
+    "isGraphAvailable": true
+  }
+]
