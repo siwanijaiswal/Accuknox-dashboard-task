@@ -5,7 +5,14 @@
     "title": "Cloud Accounts",
     "content": "",
     "isVisible": true,
-    "isGraphAvailable": true
+    "graph": {
+      "type": "donut",
+      "data": [
+        { "label": "AWS", "value": 30, "color": "#FF6384" },
+        { "label": "Azure", "value": 50, "color": "#36A2EB" },
+        { "label": "GCP", "value": 20, "color": "#FFCE56" }
+      ]
+    }
   },
   {
     "id": 2,
@@ -13,23 +20,28 @@
     "title": "Cloud Account Risk Assessment",
     "content": "",
     "isVisible": true,
-    "isGraphAvailable": true
+    "graph": {
+      "type": "donut",
+      "data": [
+        { "label": "High Risk", "value": 40, "color": "#FF5733" },
+        { "label": "Medium Risk", "value": 35, "color": "#33FF57" },
+        { "label": "Low Risk", "value": 25, "color": "#3357FF" }
+      ]
+    }
   },
   {
     "id": 3,
     "category": "CWPP Dashboard",
     "title": "Top 5 Namespace Specific Alerts",
     "content": "",
-    "isVisible": true,
-    "isGraphAvailable": false
+    "isVisible": true
   },
   {
     "id": 4,
     "category": "CWPP Dashboard",
     "title": "Workload Alerts",
     "content": "",
-    "isVisible": true,
-    "isGraphAvailable": false
+    "isVisible": true
   },
   {
     "id": 5,
@@ -37,7 +49,15 @@
     "title": "Image Risk Assessment",
     "content": "",
     "isVisible": true,
-    "isGraphAvailable": true
+    "graph": {
+      "type": "progress",
+      "data": [
+        { "label": "Critical", "value": 15, "color": "#FF6F61" },
+        { "label": "High", "value": 45, "color": "#6B5B95" },
+        { "label": "Medium", "value": 25, "color": "#88B04B" },
+        { "label": "Low", "value": 15, "color": "#F7CAC9" }
+      ]
+    }
   },
   {
     "id": 6,
@@ -45,6 +65,103 @@
     "title": "Image Security Issues",
     "content": "",
     "isVisible": true,
-    "isGraphAvailable": true
+    "graph": {
+      "type": "progress",
+      "data": [
+        { "label": "Vulnerabilities", "value": 60, "color": "#FF4F5C" },
+        { "label": "Misconfigurations", "value": 25, "color": "#4F9D9D" },
+        { "label": "Best Practices", "value": 15, "color": "#F4A261" }
+      ]
+    }
+  },
+  {
+    "id": 7,
+    "category": "Network Security",
+    "title": "Top Network Threats",
+    "content": "",
+    "isVisible": true,
+    "graph": {
+      "type": "donut",
+      "data": [
+        { "label": "DDoS", "value": 25, "color": "#E63946" },
+        { "label": "Phishing", "value": 35, "color": "#F1FAEE" },
+        { "label": "Malware", "value": 40, "color": "#A8DADC" }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "category": "Network Security",
+    "title": "Firewall Status",
+    "content": "",
+    "isVisible": true,
+    "graph": {
+      "type": "progress",
+      "data": [
+        { "label": "Open Ports", "value": 20, "color": "#F77F00" },
+        { "label": "Closed Ports", "value": 60, "color": "#D62839" },
+        { "label": "Filtered", "value": 20, "color": "#003D34" }
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "category": "Database Insights",
+    "title": "Top Database Queries",
+    "content": "",
+    "isVisible": true,
+    "graph": {
+      "type": "donut",
+      "data": [
+        { "label": "Read", "value": 50, "color": "#6A0572" },
+        { "label": "Write", "value": 30, "color": "#FF6B6B" },
+        { "label": "Update", "value": 20, "color": "#2F9B2F" }
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "category": "Database Insights",
+    "title": "Query Performance",
+    "content": "",
+    "isVisible": true,
+    "graph": {
+      "type": "progress",
+      "data": [
+        { "label": "Slow Queries", "value": 25, "color": "#FF8C00" },
+        { "label": "Average Queries", "value": 50, "color": "#00B2A9" },
+        { "label": "Fast Queries", "value": 25, "color": "#C4E538" }
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "category": "Application Monitoring",
+    "title": "Error Rates",
+    "content": "",
+    "isVisible": true,
+    "graph": {
+      "type": "donut",
+      "data": [
+        { "label": "404 Errors", "value": 30, "color": "#B83B5E" },
+        { "label": "500 Errors", "value": 50, "color": "#5A8F7A" },
+        { "label": "Other", "value": 20, "color": "#F9BF77" }
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "category": "Application Monitoring",
+    "title": "Response Times",
+    "content": "",
+    "isVisible": true,
+    "graph": {
+      "type": "progress",
+      "data": [
+        { "label": "Slow", "value": 20, "color": "#FF6F61" },
+        { "label": "Moderate", "value": 50, "color": "#6B5B95" },
+        { "label": "Fast", "value": 30, "color": "#88B04B" }
+      ]
+    }
   }
 ]

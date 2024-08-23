@@ -20,7 +20,7 @@ export default {
     function ({ addComponents }) {
       addComponents({
         ".card-category-heading": {
-          "@apply font-bold text-lg mx-9 pt-3": {},
+          "@apply font-bold text-lg pt-3": {},
         },
       });
     },

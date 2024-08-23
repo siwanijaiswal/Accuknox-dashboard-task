@@ -4,7 +4,7 @@ const SegmentedProgressBar = ({ data, text }) => {
   return (
     <>
       <p className="pb-2">
-        <span className="font-bold text-lg"> {totalValue} </span> {text}
+        <span className="font-bold text-lg"> {totalValue}</span> {text}
       </p>
 
       <div className="flex rounded-full overflow-hidden h-[30px]">
@@ -20,9 +20,7 @@ const SegmentedProgressBar = ({ data, text }) => {
                 color: "#fff",
                 fontSize: "12px",
               }}
-            >
-              {/* {segment.label} */}
-            </div>
+            ></div>
           );
         })}
       </div>
@@ -35,7 +33,10 @@ const SegmentedProgressBar = ({ data, text }) => {
               }}
               className="w-4 h-4 rounded-full mr-2"
             />
-            <span className="text-sm">{segment.label}</span>
+            <span className="text-sm">
+              {segment.label}{" "}
+              <span className="font-bold">({segment.value})</span>
+            </span>
           </div>
         ))}
       </div>

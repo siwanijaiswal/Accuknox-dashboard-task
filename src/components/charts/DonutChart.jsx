@@ -2,15 +2,14 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 
 Chart.register(ArcElement, Tooltip, Legend);
-// Custom plugin for displaying styled text in the center of the chart
 const centerTextPlugin = {
   id: "centerText",
   beforeDraw: (chart) => {
     const { ctx, width, height } = chart;
     const { options } = chart.config;
-    const total = options.plugins.centerText.total; // Get the total value
+    const total = options.plugins.centerText.total;
     const font = options.plugins.centerText.font || "bold 16px Arial";
-    const color = options.plugins.centerText.color || "#000"; // Default color
+    const color = options.plugins.centerText.color || "#000";
     const padding = options.plugins.centerText.padding || 0;
     const rightPadding = options.plugins.centerText.rightPadding || 0;
 
@@ -20,7 +19,6 @@ const centerTextPlugin = {
       ctx.textBaseline = "middle";
       ctx.fillStyle = color;
 
-      // Calculate positions
       const totalValue = total.value;
       const totalText = total.text;
       const totalTextWidth = ctx.measureText(totalText).width;
@@ -28,17 +26,15 @@ const centerTextPlugin = {
       const centerX = width / 2;
       const centerY = height / 2;
 
-      // Draw total number with right padding
       ctx.fillText(
         totalValue,
-        centerX - rightPadding - totalValueWidth / 2, // Adjust x-coordinate with right padding
+        centerX - rightPadding - totalValueWidth / 2,
         centerY - padding
       );
 
-      // Draw "Total" text with right padding
       ctx.fillText(
         totalText,
-        centerX - rightPadding - totalTextWidth / 2, // Adjust x-coordinate with right padding
+        centerX - rightPadding - totalTextWidth / 2,
         centerY + padding
       );
 
@@ -49,16 +45,18 @@ const centerTextPlugin = {
 
 Chart.register(centerTextPlugin);
 
-const DonutChart = ({ labels, data, colors }) => {
-  const total = data.reduce((a, b) => a + b, 0);
-  const totalText = "Total"; // Text above the total value
+const DonutChart = ({ data }) => {
+  const total = data
+    ?.map((graphData) => graphData.value)
+    .reduce((a, b) => a + b, 0);
+  const totalText = "Total";
 
   const chartData = {
-    labels: labels,
+    labels: data?.map((graphData) => graphData.label),
     datasets: [
       {
-        data: data,
-        backgroundColor: colors,
+        data: data?.map((graphData) => graphData.value),
+        backgroundColor: data?.map((graphData) => graphData.color),
       },
     ],
   };
@@ -81,9 +79,9 @@ const DonutChart = ({ labels, data, colors }) => {
           text: `${totalText}`,
         },
         font: "bold 20px Arial",
-        color: "#000000", // Text color
+        color: "#000000",
         padding: 15,
-        rightPadding: 80, // Padding between texts
+        rightPadding: 60,
       },
     },
   };

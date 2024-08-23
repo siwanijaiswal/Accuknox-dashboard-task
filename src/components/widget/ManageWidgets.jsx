@@ -6,7 +6,7 @@ import { groupBy } from "../../helpers/helper";
 import Tabs from "../common/Tabs";
 import { toggleWidgetVisibility } from "../../store/slices/widgetSlice";
 
-const AddWidget = ({ PlusIconFirst = false }) => {
+const ManageWidgets = ({ PlusIconFirst = false }) => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const dispatch = useDispatch();
   const widgets = useSelector((state) => state.widgets.widgets);
@@ -75,7 +75,7 @@ const AddWidget = ({ PlusIconFirst = false }) => {
           </>
         ) : (
           <>
-            <h4 className="m-1"> Add Widget </h4>
+            <h4 className="m-1"> Add Category </h4>
             <img src={PlusIcon} width="15px" />
           </>
         )}
@@ -95,4 +95,4 @@ const AddWidget = ({ PlusIconFirst = false }) => {
   );
 };
 
-export default AddWidget;
+export default ManageWidgets;

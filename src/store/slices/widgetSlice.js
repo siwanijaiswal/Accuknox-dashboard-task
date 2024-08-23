@@ -10,7 +10,11 @@ const widgetsSlice = createSlice({
   initialState,
   reducers: {
     addWidget: (state, action) => {
-      state.widgets.push(action.payload);
+      state.widgets.push({
+        id: Date.now(),
+        ...action.payload,
+        isVisible: true,
+      });
     },
     removeWidget: (state, action) => {
       state.widgets = state.widgets.filter(
@@ -33,6 +37,20 @@ export const { addWidget, removeWidget, toggleWidgetVisibility } =
 
 export const selectVisibleWidgets = (state) => {
   return state.widgets.widgets.filter((widget) => widget.isVisible);
+};
+
+export const selectCategories = (state) => {
+  return [...new Set(state.widgets.widgets.map((widget) => widget.category))];
+};
+
+export const selectGraphTypes = (state) => {
+  return [
+    ...new Set(
+      state.widgets.widgets
+        .filter((widget) => widget.graph)
+        .map((widget) => widget.graph.type)
+    ),
+  ];
 };
 
 export default widgetsSlice.reducer;
