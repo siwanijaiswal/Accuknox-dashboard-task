@@ -12,7 +12,6 @@ const AddWidget = ({ PlusIconFirst = false }) => {
   const widgets = useSelector((state) => state.widgets.widgets);
 
   const groupedWidget = groupBy(widgets, "category");
-
   const handleToggleVisibility = (id) => {
     dispatch(toggleWidgetVisibility({ id }));
   };
